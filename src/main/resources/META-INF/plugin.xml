@@ -19,7 +19,7 @@
     <actions>
         <!-- Add your actions here -->
 
-        <action id="BasicAction" class="BasicAction" text="Basic Action Test" description="for testing">
+        <action id="actions.DePaCoGAction" class="actions.DePaCoGAction" text="DePaCoG" description="Generates code for a design pattern">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>
