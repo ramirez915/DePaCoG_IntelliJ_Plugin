@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AbstractFactoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-03-08T22:32:47" hostname="LenovoAngle" time="0.701">
+  <properties/>
+  <testcase name="abstractFactoryNewAcquireSubclassesTest" classname="AbstractFactoryTest" time="0.665"/>
+  <testcase name="abstractFactoryCorrectNumFilesTest" classname="AbstractFactoryTest" time="0.036"/>
+  <system-out><![CDATA[17:32:48.300 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone** directory successfully made
+17:32:48.309 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Abstract Factory - Abstract factory parameters acquired successfully
+17:32:48.311 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Phone.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.314 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Phone.java file written successfully
+17:32:48.316 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Galaxy.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.317 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Galaxy.java file written successfully
+17:32:48.319 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File iPhone.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.321 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - iPhone.java file written successfully
+17:32:48.324 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Xiaomi.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.325 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Xiaomi.java file written successfully
+17:32:48.327 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File PhoneAbstractFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.329 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - PhoneAbstractFactory.java file written successfully
+17:32:48.330 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File GalaxyFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.332 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - GalaxyFactory.java file written successfully
+17:32:48.333 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File iPhoneFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.335 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - iPhoneFactory.java file written successfully
+17:32:48.337 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File XiaomiFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.338 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - XiaomiFactory.java file written successfully
+17:32:48.339 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File PhoneFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit18063448726686587925/Phone
+17:32:48.342 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - PhoneFactory.java file written successfully
+17:32:48.342 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Abstract Factory - Abstract factory for Phone created successfully
+17:32:48.354 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone** directory successfully made
+17:32:48.354 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Abstract Factory - Abstract factory parameters acquired successfully
+17:32:48.354 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Phone.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.356 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Phone.java file written successfully
+17:32:48.358 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Galaxy.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.359 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Galaxy.java file written successfully
+17:32:48.361 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File iPhone.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.363 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - iPhone.java file written successfully
+17:32:48.364 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Xiaomi.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.366 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Xiaomi.java file written successfully
+17:32:48.367 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File PhoneAbstractFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.369 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - PhoneAbstractFactory.java file written successfully
+17:32:48.371 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File GalaxyFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.373 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - GalaxyFactory.java file written successfully
+17:32:48.374 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File iPhoneFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.376 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - iPhoneFactory.java file written successfully
+17:32:48.377 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File XiaomiFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.378 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - XiaomiFactory.java file written successfully
+17:32:48.379 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File PhoneFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit16375888548997667959/Phone
+17:32:48.381 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - PhoneFactory.java file written successfully
+17:32:48.382 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Abstract Factory - Abstract factory for Phone created successfully
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/josea/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/7c4f3c474fb2c041d8028740440937705ebb473a/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/josea/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2019.3.3/4c54deba9ff34a615b3072cd2def3558ff462987/ideaIC-2019.3.3/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+]]></system-err>
+</testsuite>

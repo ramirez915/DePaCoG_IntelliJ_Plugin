@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BuilderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-03-08T22:32:48" hostname="LenovoAngle" time="0.019">
+  <properties/>
+  <testcase name="builderNewAcquireInfo" classname="BuilderTest" time="0.009"/>
+  <testcase name="builderCorrectTypes" classname="BuilderTest" time="0.009"/>
+  <system-out><![CDATA[17:32:48.396 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit66154266615899557/Car** directory successfully made
+17:32:48.396 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Builder - Builder parameters acquired successfully
+17:32:48.398 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Car.java successfully created at C:\Users\josea\AppData\Local\Temp\junit66154266615899557/Car
+17:32:48.400 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Car.java file written successfully
+17:32:48.405 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit4825592362895893105/Car** directory successfully made
+17:32:48.405 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Builder - Builder parameters acquired successfully
+17:32:48.407 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Car.java successfully created at C:\Users\josea\AppData\Local\Temp\junit4825592362895893105/Car
+17:32:48.409 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Car.java file written successfully
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

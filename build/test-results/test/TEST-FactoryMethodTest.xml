@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FactoryMethodTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-03-08T22:32:48" hostname="LenovoAngle" time="0.054">
+  <properties/>
+  <testcase name="factoryMethodCorrectFileAmount" classname="FactoryMethodTest" time="0.025"/>
+  <testcase name="factoryMethodNewAcquireSubclasses" classname="FactoryMethodTest" time="0.029"/>
+  <system-out><![CDATA[17:32:48.417 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit8712895612041919133/Burger** directory successfully made
+17:32:48.417 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Factory Method - Factory method parameters acquired successfully
+17:32:48.420 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Burger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit8712895612041919133/Burger
+17:32:48.422 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Burger.java file written successfully
+17:32:48.423 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Hamburger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit8712895612041919133/Burger
+17:32:48.424 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Hamburger.java file written successfully
+17:32:48.426 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Cheeseburger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit8712895612041919133/Burger
+17:32:48.427 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Cheeseburger.java file written successfully
+17:32:48.429 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Veggieburger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit8712895612041919133/Burger
+17:32:48.430 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Veggieburger.java file written successfully
+17:32:48.431 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File BurgerFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit8712895612041919133/Burger
+17:32:48.433 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - BurgerFactory.java file written successfully
+17:32:48.433 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Factory Method - Factory method for Burger successfully created
+17:32:48.442 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit7318181357922760900/Burger** directory successfully made
+17:32:48.442 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Factory Method - Factory method parameters acquired successfully
+17:32:48.444 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Burger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit7318181357922760900/Burger
+17:32:48.445 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Burger.java file written successfully
+17:32:48.448 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Hamburger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit7318181357922760900/Burger
+17:32:48.450 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Hamburger.java file written successfully
+17:32:48.453 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Cheeseburger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit7318181357922760900/Burger
+17:32:48.455 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Cheeseburger.java file written successfully
+17:32:48.457 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Veggieburger.java successfully created at C:\Users\josea\AppData\Local\Temp\junit7318181357922760900/Burger
+17:32:48.459 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Veggieburger.java file written successfully
+17:32:48.460 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File BurgerFactory.java successfully created at C:\Users\josea\AppData\Local\Temp\junit7318181357922760900/Burger
+17:32:48.461 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - BurgerFactory.java file written successfully
+17:32:48.462 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Factory Method - Factory method for Burger successfully created
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

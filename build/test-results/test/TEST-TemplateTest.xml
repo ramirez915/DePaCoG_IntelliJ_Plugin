@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TemplateTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-03-08T22:32:48" hostname="LenovoAngle" time="0.053">
+  <properties/>
+  <testcase name="templateNewSubclassesCreation" classname="TemplateTest" time="0.025"/>
+  <testcase name="templateCorrectFileNum" classname="TemplateTest" time="0.028"/>
+  <system-out><![CDATA[17:32:48.478 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit17508159532209408824/Table** directory successfully made
+17:32:48.479 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Template - Template parameters acquired successfully
+17:32:48.481 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Table.java successfully created at C:\Users\josea\AppData\Local\Temp\junit17508159532209408824/Table
+17:32:48.482 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Table.java file written successfully
+17:32:48.484 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File GlassTable.java successfully created at C:\Users\josea\AppData\Local\Temp\junit17508159532209408824/Table
+17:32:48.488 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - GlassTable.java file written successfully
+17:32:48.490 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File WoodenTable.java successfully created at C:\Users\josea\AppData\Local\Temp\junit17508159532209408824/Table
+17:32:48.492 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - WoodenTable.java file written successfully
+17:32:48.493 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File MetalTable.java successfully created at C:\Users\josea\AppData\Local\Temp\junit17508159532209408824/Table
+17:32:48.495 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - MetalTable.java file written successfully
+17:32:48.496 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Template - Template for Table successfully created
+17:32:48.506 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - **C:\Users\josea\AppData\Local\Temp\junit3695681220323784362/Table** directory successfully made
+17:32:48.507 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Template - Template parameters acquired successfully
+17:32:48.508 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File Table.java successfully created at C:\Users\josea\AppData\Local\Temp\junit3695681220323784362/Table
+17:32:48.510 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - Table.java file written successfully
+17:32:48.512 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File GlassTable.java successfully created at C:\Users\josea\AppData\Local\Temp\junit3695681220323784362/Table
+17:32:48.513 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - GlassTable.java file written successfully
+17:32:48.515 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File WoodenTable.java successfully created at C:\Users\josea\AppData\Local\Temp\junit3695681220323784362/Table
+17:32:48.518 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - WoodenTable.java file written successfully
+17:32:48.521 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - File MetalTable.java successfully created at C:\Users\josea\AppData\Local\Temp\junit3695681220323784362/Table
+17:32:48.523 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m MyConstants - MetalTable.java file written successfully
+17:32:48.524 ?[32m[Test worker]?[0;39m ?[34mINFO ?[0;39m Template - Template for Table successfully created
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
