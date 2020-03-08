@@ -98,7 +98,7 @@ public class AbstractFactory extends DesignPatternObj {
         ArrayList<String> params = new ArrayList<>();
         params.add(this.mainInterfaceName);
         params.add(this.abstFactoryMethodName);
-        factoryInterface.setDirName(this.mainInterfaceName);
+        factoryInterface.setDirName(this.path);
 
         //now make the text for this interface and create the file
         MyConsts.createContainerStub(factoryInterface);

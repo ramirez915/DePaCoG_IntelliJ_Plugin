@@ -13,15 +13,10 @@ repositories {
     mavenCentral()
 }
 
-test{
-    // to run JUnit 5 tests
-    useJUnitPlatform()
-}
 
 dependencies {
-    //JUnit 5 dependencies
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.2.0")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.2.0")
+    // JUnit4
+    testCompile 'junit:junit:4.12'
     //slf4j logger  was 1.7.+
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     //logback   was 1.2.3

@@ -3,7 +3,6 @@ package actions;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import consts.MyConsts;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,10 +30,12 @@ public class DePaCoGAction extends com.intellij.openapi.actionSystem.AnAction {
                 String path = FileChooser.chooseFile(fc,e.getProject(),null).getCanonicalPath();
                 logger.info("Chosen path was {}",path);
 
-                //open get info window here***
+                //open window to get info
                 DePaCoGPromptWindow prompt = new DePaCoGPromptWindow(selectedDesPat);
                 if(prompt.showAndGet()){
                     ArrayList<String> paramsList = createParameterList(prompt.getSelection());
+
+                    //create the selected design pattern
                     prompt.createSelectedDesignPattern(selectedDesPat,paramsList,path);
                 }
             }

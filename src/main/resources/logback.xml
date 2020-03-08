@@ -1,30 +1,21 @@
 <configuration>
 
-<!--    <property resource="resource1.properties" />-->
-<!--    <property name="LOG_DIR" value="/var/log/application" />-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %green([%thread]) %highlight(%-5level) %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<!--    for some reason the log dir and the log file get stored in the cache when running project-->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>log/DePaCoG_log.log</file>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-<!--        <file>${LOG_DIR}/DePaCoG_log.log</file>-->
-<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-<!--            &lt;!&ndash; Daily rollover &ndash;&gt;-->
-<!--            <fileNamePattern>log/DePaCoGPlugin.%d{yyyy-MM-dd}.log</fileNamePattern>-->
-
-<!--            &lt;!&ndash; Keep 7 days' worth of history &ndash;&gt;-->
-<!--            <maxHistory>7</maxHistory>-->
-<!--        </rollingPolicy>-->
-
-<!--        <encoder>-->
-<!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
-<!--        </encoder>-->
-<!--    </appender>-->
-
     <root level="debug">
         <appender-ref ref="STDOUT" />
-<!--        <appender-ref ref="FILE"/>-->
+        <appender-ref ref="FILE"/>
     </root>
 </configuration>
