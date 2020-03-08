@@ -1,7 +1,6 @@
 package designPatterns;
 
 import consts.MyConsts;
-import consts.Tools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,27 +19,28 @@ public class AbstractFactory extends DesignPatternObj {
     private int totalFuncs;
     private String abstFactoryName;
     private String abstFactoryMethodName;
-//    final static Logger logger = LoggerFactory.getLogger("Abstract Factory");
+    final static Logger logger = LoggerFactory.getLogger("Abstract Factory");
 
     // get the information for the super class and sub classes
-    public AbstractFactory(){
+    public AbstractFactory(ArrayList<String> parameters,String path){
         // order of params: main interface, function amount, amount of subclasses and names of subclasses
-        this.desPatParams = Tools.getParamsForPattern("abstract factory");
+        this.desPatParams = parameters;
         parseDesignPatternParams(this.desPatParams);
         // make the directory
-        MyConsts.createDir(this.mainInterfaceName);
+        this.path = path + "/" + this.mainInterfaceName;
+        MyConsts.createDir(this.path);
 
         // to have a name for the create function and abstract factory
-        this.abstFactoryName = mainInterfaceName+"AbstractFactory";
-        this.abstFactoryMethodName = "create"+ mainInterfaceName;
+        this.abstFactoryName = this.mainInterfaceName+"AbstractFactory";
+        this.abstFactoryMethodName = "create"+ this.mainInterfaceName;
         this.subClassList = new ArrayList<>();
-//        logger.info("Abstract factory parameters acquired successfully");
+        logger.info("Abstract factory parameters acquired successfully");
     }
 
     public void createAbstractFactory(){
         // create interface for the product we are going to mass produce
-        Container mainInterface = new Container("interface", mainInterfaceName, "",totalFuncs);
-        mainInterface.setDirName(mainInterfaceName);
+        Container mainInterface = new Container("interface", this.mainInterfaceName, "",totalFuncs);
+        mainInterface.setDirName(this.path);
         MyConsts.createContainerStub(mainInterface);
 
         // adding the function stubs
@@ -58,7 +58,7 @@ public class AbstractFactory extends DesignPatternObj {
         createFactoryForConcreteClasses();
         //create the main factory that will create the products from the different factories
         createInterfaceFactoryMaker();
-//        logger.info("Abstract factory for {} created successfully",this.mainInterfaceName);
+        logger.info("Abstract factory for {} created successfully",this.mainInterfaceName);
     }
 
     /*
@@ -70,9 +70,9 @@ public class AbstractFactory extends DesignPatternObj {
         for(int i = 2; i < this.desPatParams.size(); i++){
             ArrayList<String> subClassParams = new ArrayList<>();
             name = this.desPatParams.get(i);
-            Container subClass = new Container("regular class",name,mainInterfaceName,totalFuncs);
+            Container subClass = new Container("regular class",name,this.mainInterfaceName,this.totalFuncs);
             subClass.setImplement(true);
-            subClass.setDirName(mainInterfaceName);
+            subClass.setDirName(this.path);
 
             MyConsts.createContainerStub(subClass);
             // will need the override because implementing an interface
@@ -94,11 +94,11 @@ public class AbstractFactory extends DesignPatternObj {
     creates the factory that returns an instance of the main interface
      */
     private void createFactoryInterface(){
-        Container factoryInterface = new Container("interface",abstFactoryName,"",1);
+        Container factoryInterface = new Container("interface",this.abstFactoryName,"",1);
         ArrayList<String> params = new ArrayList<>();
-        params.add(mainInterfaceName);
-        params.add(abstFactoryMethodName);
-        factoryInterface.setDirName(mainInterfaceName);
+        params.add(this.mainInterfaceName);
+        params.add(this.abstFactoryMethodName);
+        factoryInterface.setDirName(this.mainInterfaceName);
 
         //now make the text for this interface and create the file
         MyConsts.createContainerStub(factoryInterface);
@@ -114,12 +114,12 @@ public class AbstractFactory extends DesignPatternObj {
     private void createFactoryForConcreteClasses(){
         // 2 because of the position of the names starts at 2 in the design pattern params list
         for(int i = 2; i < this.desPatParams.size(); i++){
-            Container subFactory = new Container("regular class",this.desPatParams.get(i) + "Factory",abstFactoryName,1);
+            Container subFactory = new Container("regular class",this.desPatParams.get(i) + "Factory",this.abstFactoryName,1);
             subFactory.setImplement(true);
-            subFactory.setDirName(mainInterfaceName);
+            subFactory.setDirName(this.path);
 
             MyConsts.createContainerStub(subFactory);
-            subFactory.text += String.format(MyConsts.OverrideFunctionWReturnAndNameSig,mainInterfaceName,abstFactoryMethodName);
+            subFactory.text += String.format(MyConsts.OverrideFunctionWReturnAndNameSig,this.mainInterfaceName,this.abstFactoryMethodName);
             subFactory.text += String.format(MyConsts.ReturnNewStub,this.desPatParams.get(i));
             // now make constructor
             subFactory.text += String.format(MyConsts.ConstructorSig,subFactory.name);
@@ -134,14 +134,14 @@ public class AbstractFactory extends DesignPatternObj {
     from the given factory
      */
     private void createInterfaceFactoryMaker(){
-        Container mainFactory = new Container("regular class",mainInterfaceName+"Factory","",1);
+        Container mainFactory = new Container("regular class",this.mainInterfaceName+"Factory","",1);
         // implements and extends are to be set to false since this is going to be a regular class
-        mainFactory.setDirName(mainInterfaceName);
+        mainFactory.setDirName(this.path);
 
         MyConsts.createContainerStub(mainFactory);
         //create function stub
-        mainFactory.text += "\t"+ MyConsts.PublicStatic + mainInterfaceName + " " + abstFactoryMethodName;
-        mainFactory.text += String.format("(%s %s){\n\treturn %s.%s();\n\t}\n",abstFactoryName,"af","af",abstFactoryMethodName);
+        mainFactory.text += "\t"+ MyConsts.PublicStatic + this.mainInterfaceName + " " + this.abstFactoryMethodName;
+        mainFactory.text += String.format("(%s %s){\n\treturn %s.%s();\n\t}\n",this.abstFactoryName,"af","af",this.abstFactoryMethodName);
         MyConsts.createFile(mainFactory);
     }
 

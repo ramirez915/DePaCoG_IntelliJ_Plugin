@@ -6,6 +6,7 @@ public abstract class DesignPatternObj {
     protected int totalFuncs;
     protected ArrayList<Container> subClassList;
     protected ArrayList<String> desPatParams;
+    protected String path;                      // contains the path chosen by user to store the created files
 
     /*
      will parse out the parameters gotten from the user

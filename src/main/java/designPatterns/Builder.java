@@ -1,7 +1,6 @@
 package designPatterns;
 
 import consts.MyConsts;
-import consts.Tools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,15 +28,16 @@ public class Builder extends DesignPatternObj {
     private int optionalAttributeAmount;
     private String[] mandatoryAttributeTypes;
     private String[] optionalAttributeTypes;
-//    final static Logger logger = LoggerFactory.getLogger("Builder");
+    final static Logger logger = LoggerFactory.getLogger("Builder");
 
-    public Builder(){
-        this.desPatParams = Tools.getParamsForPattern("builder");
+    public Builder(ArrayList<String> parameters,String path){
+        this.desPatParams = parameters;
         parseDesignPatternParams(this.desPatParams);
 
         // make the directory
-        MyConsts.createDir(this.mainClassName);
-//        logger.info("Builder parameters acquired successfully");
+        this.path = path + "/" + this.mainClassName;
+        MyConsts.createDir(this.path);
+        logger.info("Builder parameters acquired successfully");
     }
 
     public void createBuilder(){
@@ -45,12 +45,10 @@ public class Builder extends DesignPatternObj {
         int totalFunctionsNeeded = this.mandatoryAttributeAmount + this.optionalAttributeAmount;
         Container mainClass = new Container("regular class",this.mainClassName,"",totalFunctionsNeeded);
         makeMainClassStub(mainClass);
-
-
     }
 
     private void makeMainClassStub(Container mainClass){
-        mainClass.setDirName(this.mainClassName);
+        mainClass.setDirName(this.path);
         MyConsts.createContainerStub(mainClass);
 
         // add in attributes

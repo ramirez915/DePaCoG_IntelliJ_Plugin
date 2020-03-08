@@ -1,8 +1,6 @@
 package designPatterns;
 
-
 import consts.MyConsts;
-import consts.Tools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,21 +29,21 @@ public class FactoryMethod extends DesignPatternObj{
     private String[] variableTypes;
     private int namesStartIndex;
     private String mainFactoryName;
-//    final static Logger logger = LoggerFactory.getLogger("Factory Method");
+    final static Logger logger = LoggerFactory.getLogger("Factory Method");
 
 
-    public FactoryMethod(){
+    public FactoryMethod(ArrayList<String> parametersList,String path){
         // order or params: abstract class name, variable amount,
         // variable types (x amount) abstract function amount, regular function amount
-        this.desPatParams = new ArrayList<>();
-        desPatParams = Tools.getParamsForPattern("factory method");
+        this.desPatParams = parametersList;
         parseDesignPatternParams(this.desPatParams);
         this.mainFactoryName = this.mainAbstractClassName + "Factory";
         this.subClassList = new ArrayList<>();
 
         // make the directory
-        MyConsts.createDir(this.mainAbstractClassName);
-//        logger.info("Factory method parameters acquired successfully");
+        this.path = path + "/" + this.mainAbstractClassName;
+        MyConsts.createDir(this.path);
+        logger.info("Factory method parameters acquired successfully");
     }
 
     /*
@@ -54,7 +52,7 @@ public class FactoryMethod extends DesignPatternObj{
     public void createFactoryMethod(){
         //create the container for the abstract class and the stub
         Container mainAbstractClass = new Container("abstract class",this.mainAbstractClassName,"",this.totalFuncs);
-        mainAbstractClass.setDirName(mainAbstractClassName);
+        mainAbstractClass.setDirName(this.path);
         MyConsts.createContainerStub(mainAbstractClass);
 
         // add variables first
@@ -74,7 +72,7 @@ public class FactoryMethod extends DesignPatternObj{
         createFactorySubClasses();
         //main factory
         createMainFactory();
-//        logger.info("Factory method for {} successfully created",this.mainAbstractClassName);
+        logger.info("Factory method for {} successfully created",this.mainAbstractClassName);
     }
 
     private void createFactorySubClasses(){
@@ -83,7 +81,7 @@ public class FactoryMethod extends DesignPatternObj{
             ArrayList<String> subClassParams = new ArrayList<>();
             Container subClass = new Container("regular class",this.desPatParams.get(i),this.mainAbstractClassName,this.totalAbstractMethods);
             subClass.setExtend(true);
-            subClass.setDirName(this.mainAbstractClassName);
+            subClass.setDirName(this.path);
 
             //now ready to make the container stub
             MyConsts.createContainerStub(subClass);
@@ -107,7 +105,7 @@ public class FactoryMethod extends DesignPatternObj{
      */
     private void createMainFactory(){
         Container mainFactory = new Container("regular class",this.mainFactoryName,"",1);
-        mainFactory.setDirName(this.mainAbstractClassName);
+        mainFactory.setDirName(this.path);
         MyConsts.createContainerStub(mainFactory);
 
         // create function stub that will return a mainAbstractClass type and take in a string as param
@@ -121,8 +119,13 @@ public class FactoryMethod extends DesignPatternObj{
     @Override
     public void parseDesignPatternParams(ArrayList<String> paramList) {
         this.mainAbstractClassName = paramList.get(0);
-
-        int totalVariables = Integer.parseInt(paramList.get(1));
+        int totalVariables = 0;
+        // checking if the total variable input is a number
+        try{
+            totalVariables = Integer.parseInt(paramList.get(1));
+        }catch(NumberFormatException e){
+            logger.error("Did not input a number for the total variables for {} Factory",this.mainAbstractClassName);
+        }
         this.variableTypes = new String[totalVariables];
         int index = 2;
         // keep asking the variable types for the total number of variables
@@ -131,8 +134,12 @@ public class FactoryMethod extends DesignPatternObj{
             index++;
         }
         // index is up to where it is needed to get the correct next parameters
-        this.totalAbstractMethods = Integer.parseInt(paramList.get(index));
-        this.totalRegularMethods = Integer.parseInt(paramList.get(index+1));
+        try{
+            this.totalAbstractMethods = Integer.parseInt(paramList.get(index));
+            this.totalRegularMethods = Integer.parseInt(paramList.get(index+1));
+        }catch(NumberFormatException e){
+            logger.error("Did not input a number for the total number of abstract functions or regular functions for {} Factory",this.mainAbstractClassName);
+        }
         // from here on out all that remains are the names of the sub classes
         this.namesStartIndex = index + 2;
     }

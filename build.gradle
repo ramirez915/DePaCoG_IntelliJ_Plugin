@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.intellij' version '0.4.16'
+    id  'idea'
 }
 
 group 'org.cs474AngelR'
@@ -25,6 +26,8 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     //logback   was 1.2.3
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    //logging to a file
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     //configuration
     compile group: 'com.typesafe', name: 'config', version: '1.4.0'
 }

@@ -8,25 +8,15 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class MyConsts {
-    static Config consts = ConfigFactory.load("javaWay.conf");
-//    final static Logger logger = LoggerFactory.getLogger("MyConstants");
-
-    // prompts to user
-    public static String AbstractClassPrompt = consts.getString("AbstractClassPrompt");
-    public static String RegularClassPrompt = consts.getString("RegularClassPrompt");
-    public static String AbstractFunctionAmountPrompt = consts.getString("AbstractFunctionAmountPrompt");
-    public static String FunctionAmountPrompt = consts.getString("FunctionAmountPrompt");
-    public static String AmountSubclassesPrompt = consts.getString("AmountSubclassesPrompt");
-    public static String InterfacePrompt = consts.getString("InterfacePrompt");
-    public static String VariableTypePrompt = consts.getString("VariableTypePrompt");
-    public static String VariableAmountPrompt = consts.getString("VariableAmountPrompt");
-    public static String MandatoryAttributeAmountPrompt = consts.getString("MandatoryAttributeAmountPrompt");
-    public static String OptionalAttributeAmountPrompt = consts.getString("OptionalAttributeAmountPrompt");
-    public static String AbsoluteProcessAmountPrompt = consts.getString("AbsoluteProcessAmountPrompt");
-    public static String AmountOfFunctionsInAbsoluteProcess = consts.getString("AmountOfFunctionsInAbsoluteProcess");
+    //this was the fix that helped resolve conf file not being located--------------------------
+    static URL res = MyConsts.class.getClassLoader().getResource("application.conf");
+    static Config consts = ConfigFactory.parseURL(res);
+    //------------------------------------------------------------------------------------------
+    final static Logger logger = LoggerFactory.getLogger("MyConstants");
 
     // signatures for the classes, functions, and interfaces
     public static String AbstractClassSig = consts.getString("ABSTRACT CLASS");
@@ -36,7 +26,6 @@ public class MyConsts {
 
     public static String AbstractFunctionGenericSig = consts.getString("ABSTRACT FUNCTION GEN");
     public static String RegularFunctionGenericSig = consts.getString("REGULAR FUNCTION GEN");
-    public static String StaticFunctionGenericSig = consts.getString("STATIC FUNCTION GEN");
     public static String InterfaceFunctionGenericSig = consts.getString("INTERFACE FUNCTION GEN");
     public static String OverrideRegularFunctionGenericSig = consts.getString("OVERRIDE REGULAR FUNCTION GEN");
     public static String OverrideAbstractFunctionGenericSig = consts.getString("OVERRIDE ABSTRACT FUNCTION GEN");
@@ -65,6 +54,14 @@ public class MyConsts {
     public static String CaseReturnNewStub = consts.getString("CASE RETURN NEW");
     public static String DefaultCaseStub = consts.getString("DEFAULT CASE");
 
+    //plugin addons
+    public static String PluginInstructions = consts.getString("instructions");
+    public static String PluginFactoryInstructions = consts.getString("factoryInstructions");
+    public static String PluginBuilderInstructions = consts.getString("builderInstructions");
+    public static String PluginTemplateInstructions = consts.getString("templateInstructions");
+    public static String PluginAbstractFactoryInstructions = consts.getString("abstractFactoryInstructions");
+    public static String PluginNotYetImplementedPrompt = consts.getString("notYetImplemented");
+
     /*
     verifies if the desired design pattern is implemented
     or not in the config file
@@ -78,14 +75,12 @@ public class MyConsts {
      */
     public static void createDir(String name){
         // get current working directory
-        String path = System.getProperty("user.dir");
-        path += "/" + name;
         try{
-            File newDir = new File(path);
+            File newDir = new File(name);
             newDir.mkdir();
-//            logger.info("**{}** directory successfully made",name);
+            logger.info("**{}** directory successfully made",name);
         } catch(Exception e){
-//            logger.error("**{}** directory could not be made",name);
+            logger.error("**{}** directory could not be made",name);
         }
     }
 
@@ -121,12 +116,10 @@ public class MyConsts {
             writer.write(stringToWrite);
             writer.close();
 
-            // log that the string was written successfully *****************************
-//            System.out.println("*****file written successfully*****");
-//            logger.info("{} file written successfully",f.getName());
+            logger.info("{} file written successfully",f.getName());
         } catch (Exception e) {
             //log error
-//            logger.error("Failed to write to {} file",f.getName());
+            logger.error("Failed to write to {} file",f.getName());
             return false;
         }
         return true;
@@ -175,18 +168,18 @@ public class MyConsts {
     creates the .java file once the text is ready
      */
     public static void createFile(Container c){
-        String dir = System.getProperty("user.dir") + "/" + c.dirName;
+        String dir = c.dirName;
         File newFile = new File(dir,c.name + ".java");
         try {
             if (newFile.createNewFile()) {
-//                logger.info("File {} successfully created",newFile.getName());
+                logger.info("File {} successfully created at {}",newFile.getName(),c.dirName);
 
                 writeToFile(newFile,c.text);
             } else {
-//                logger.warn("Unable to create File **{}**, it already exists",newFile.getName());
+                logger.warn("Unable to create File **{}**, it already exists at {}",newFile.getName(),c.dirName);
             }
         } catch (Exception e) {
-//            logger.error("Some error occurred while creating the file {}",newFile.getName());
+            logger.error("Some error occurred while creating the file {}",newFile.getName());
         }
     }
 }

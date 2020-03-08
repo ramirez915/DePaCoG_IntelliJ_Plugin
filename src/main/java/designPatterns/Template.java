@@ -1,7 +1,6 @@
 package designPatterns;
 
 import consts.MyConsts;
-import consts.Tools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,29 +35,31 @@ public class Template extends DesignPatternObj {
     private int totalAbstractFunctions;
     private int[] functionsInEachProcess;
     private int totalAbsoluteProcesses;
-//    final static Logger logger = LoggerFactory.getLogger("Template");
+    final static Logger logger = LoggerFactory.getLogger("Template");
 
-    public Template(){
-        this.desPatParams = Tools.getParamsForPattern("template");
+    public Template(ArrayList<String> parameters, String path){
+        this.desPatParams = parameters;
         this.subClassList = new ArrayList<>();
+        this.path = path + "/";
         parseDesignPatternParams(this.desPatParams);
+
         // make the directory
-        MyConsts.createDir(this.mainAbstractClassName);
-//        logger.info("Template parameters acquired successfully");
+        MyConsts.createDir(this.path);
+        logger.info("Template parameters acquired successfully");
     }
 
 
     public void createTemplate(){
         createMainAbstractClass();
         createSubclasses();
-//        logger.info("Template for {} successfully created",this.mainAbstractClassName);
+        logger.info("Template for {} successfully created",this.mainAbstractClassName);
     }
 
     private void createMainAbstractClass(){
         //start by making the main abstract class
         int overallTotalFunctions = this.totalAbstractFunctions + this.totalFuncs;
         Container mainAbstractClass = new Container("abstract class",this.mainAbstractClassName,"",overallTotalFunctions);
-        mainAbstractClass.setDirName(mainAbstractClassName);
+        mainAbstractClass.setDirName(this.path);
         MyConsts.createContainerStub(mainAbstractClass);
 
         // add abstract functions then regular functions
@@ -104,6 +105,7 @@ public class Template extends DesignPatternObj {
         this.totalFuncs = Integer.parseInt(paramList.get(2));
         this.totalAbsoluteProcesses = Integer.parseInt(paramList.get(3));
         this.functionsInEachProcess = new int[this.totalAbsoluteProcesses];
+        this.path = this.path + this.mainAbstractClassName;
 
         int index = 4;
         for(int i = 0; i < this.totalAbsoluteProcesses; i++){
@@ -115,7 +117,7 @@ public class Template extends DesignPatternObj {
         for(int i = index; i < paramList.size(); i++){
             Container subClass = new Container("regular class",paramList.get(i),this.mainAbstractClassName,this.totalAbstractFunctions);
             subClass.setExtend(true);
-            subClass.setDirName(this.mainAbstractClassName);
+            subClass.setDirName(this.path);
             this.subClassList.add(subClass);
         }
     }
