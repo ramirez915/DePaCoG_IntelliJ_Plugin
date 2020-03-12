@@ -23,11 +23,9 @@ will display the selections and allow user to choose
 a design pattern to be created
  */
 public class DePaCoGPromptWindow extends DialogWrapper {
-
     private String mainPrompt = String.format("***Select a Design Pattern***\n" +
-            "%-15d Abstract factory\n%-15d Builder\n%-15d Factory Method\n%-15d Facade %n" +
-            "%-15d Chain of Responsibility\n%-15d Mediator\n%-15d Visitor\n%-15d Template %n" +
-            "Enter the design pattern number you want or exit",1,2,3,4,5,6,7,8);
+        "%-15d Abstract factory\n%-15d Builder\n%-15d Factory Method\n%-15d Template %n" +
+        "Enter the design pattern number you want or exit",1,2,3,4);
     private JPanel mainPanel;
     private JTextArea prompt;
     private JTextArea userSelection;
@@ -101,33 +99,18 @@ public class DePaCoGPromptWindow extends DialogWrapper {
         desPatMap.put("1","Abstract Factory");
         desPatMap.put("2","Builder");
         desPatMap.put("3","Factory Method");
-        desPatMap.put("4","Facade");
-        desPatMap.put("5","Chain of Responsibility");
-        desPatMap.put("6","Mediator");
-        desPatMap.put("7","Visitor");
-        desPatMap.put("8","Template");
+        desPatMap.put("4","Template");
 
         desPatPrompt.put("1",MyConsts.PluginAbstractFactoryInstructions);
         desPatPrompt.put("2",MyConsts.PluginBuilderInstructions);
         desPatPrompt.put("3",MyConsts.PluginFactoryInstructions);
-
-        desPatPrompt.put("4",MyConsts.PluginNotYetImplementedPrompt);
-        desPatPrompt.put("5",MyConsts.PluginNotYetImplementedPrompt);
-        desPatPrompt.put("6",MyConsts.PluginNotYetImplementedPrompt);
-        desPatPrompt.put("7",MyConsts.PluginNotYetImplementedPrompt);
-
-        desPatPrompt.put("8",MyConsts.PluginTemplateInstructions);
+        desPatPrompt.put("4",MyConsts.PluginTemplateInstructions);
     }
 
     public boolean isValidSelection(String selection){
         // checks that the selected value is within range
-        if(Integer.parseInt(selection) > 8 || Integer.parseInt(selection) < 1){
+        if(Integer.parseInt(selection) > 4 || Integer.parseInt(selection) < 1){
             logger.warn("Invalid option **{}** was selected",selection);
-            return false;
-        }
-        // checks if the selection is implemented
-        else if(!MyConsts.verifyImplementation(desPatMap.get(selection))){
-            logger.warn("User wanted to create the **{}** design pattern that is not yet implemented",desPatMap.get(selection));
             return false;
         }
         return true;
@@ -135,8 +118,7 @@ public class DePaCoGPromptWindow extends DialogWrapper {
 
     /*
     will take in the user input and create the selected design pattern
-    1 abstract factory          2 builder   3 factory method    4 Facade
-    5 chain of responsibility   6 mediator  7 visitor           8 template
+    1 abstract factory          2 builder   3 factory method    8 template
 
     path is passed in to know where to create the files
      */
@@ -153,14 +135,6 @@ public class DePaCoGPromptWindow extends DialogWrapper {
                     new FactoryMethod(parameters,path).createFactoryMethod();
                     break;
                 case "4":
-                    break;
-                case "5":
-                    break;
-                case "6":
-                    break;
-                case "7":
-                    break;
-                case "8":
                     new Template(parameters,path).createTemplate();
                     break;
                 default:

@@ -60,7 +60,6 @@ public class MyConsts {
     public static String PluginBuilderInstructions = consts.getString("builderInstructions");
     public static String PluginTemplateInstructions = consts.getString("templateInstructions");
     public static String PluginAbstractFactoryInstructions = consts.getString("abstractFactoryInstructions");
-    public static String PluginNotYetImplementedPrompt = consts.getString("notYetImplemented");
 
     /*
     verifies if the desired design pattern is implemented
